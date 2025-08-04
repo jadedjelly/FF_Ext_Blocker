@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Restrictor Settings</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; }
+    label { display: block; margin-top: 10px; }
+    input[type="text"], input[type="number"] { width: 100%; padding: 5px; }
+    button { margin-top: 10px; }
+    ul { padding-left: 20px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+    th, td { border: 1px solid #ccc; padding: 5px; text-align: center; }
+    input[type="number"] { width: 50px; }
+    .day-block { margin-bottom: 20px; padding: 10px; border: 1px solid #ccc; }
+    .day-title { font-weight: bold; margin-bottom: 5px; }
+    .range-row { margin-bottom: 5px; }
+    .range-row input { width: 100px; }
+    .range-row button { margin-left: 10px; }
+  </style>
+</head>
+<body>
+  <h1>Restrictor Settings</h1>
+  <label>Allowed Websites (one per line)</label>
+  <textarea id="sites" rows="6" style="width:100%;"></textarea>
+  <h2>Time Ranges Per Day</h2>
+  <div id="daySchedules"></div>
+  <template id="rangeTemplate">
+    <div class="range-row">
+      <input type="time" class="start"> – 
+      <input type="time" class="end">
+      <button class="remove">✕</button>
+    </div>
+  </template>
+  <button id="save">Save</button>
+  <p id="status" style="color: green;"></p>
+  <script src="options.js"></script>
+</body>
+</html>

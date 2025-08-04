@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Access Blocked</title>
+  <style>
+    body { font-family: sans-serif; background: #f44336; color: white; text-align: center; padding: 5%; }
+    form, .jobs { margin-top: 20px; }
+    input { padding: 10px; font-size: 16px; }
+    #denied { margin-top: 15px; color: yellow; display: none; }
+    .jobs { text-align: left; background: #ffffff22; padding: 15px; border-radius: 8px; }
+    .jobs h2 { color: #fff; }
+    table { width: 100%; color: #fff; margin-top: 10px; border-collapse: collapse; }
+    th, td { padding: 5px 8px; border-bottom: 1px solid #ddd; }
+    .props { margin-top: 10px; font-size: 0.9em; }
+  </style>
+</head>
+<body>
+  <h1>Access Blocked</h1>
+  <p>This site is not accessible during restricted hours.</p>
+
+  <form id="passwordForm">
+    <input type="password" placeholder="Enter password to override" id="password">
+    <input type="submit" value="Unlock">
+  </form>
+  <div id="denied">❌ Access Denied: Invalid password</div>
+
+  <div class="jobs">
+    <h2>💼 Top Remote/Hybrid Roles (£85k+)</h2>
+    <table>
+      <tr><th>Role</th><th>Salary (£k med)</th><th>Budget (£k)</th><th>Property Fit</th></tr>
+      <tr><td>Senior Platform Engineer (Monzo)</td><td>114</td><td>570</td><td>Comfortable in both Cotswolds & Highlands</td></tr>
+      <tr><td>Senior DevOps Engineer (Bristol hybrid)</td><td>95</td><td>475</td><td>Cotswolds ✔, Highlands ✔</td></tr>
+      <tr><td>Principal Software Engineer (Edinburgh remote)</td><td>100</td><td>500</td><td>Cotswolds ✔, Highlands ✔</td></tr>
+      <tr><td>London RHCE Engineer</td><td>82.5</td><td>412</td><td>Near Cotswolds (slightly under), Highlands ✔</td></tr>
+      <tr><td>Hybrid Linux Engineer (top‑25%)</td><td>85</td><td>425</td><td>Cotswolds ✔, Highlands ✔</td></tr>
+    </table>
+    <p class="props">
+      * Budget based on mortgage ≈ 4× salary + 20 % deposit (≈ 5× salary).<br>
+      * Cotswolds avg house price: ~£447 k; Highlands: ~£214 k.
+    </p>
+    <h2>🏡 Example Property Matches</h2>
+    <table>
+      <tr><th>Location</th><th>Highlands Property</th><th>Cotswold Property</th></tr>
+      <tr><td>Highland (£214 k avg)</td><td>✅ All roles can afford</td><td>–</td></tr>
+      <tr><td>Cotswold (~£447 k)</td><td>–</td><td>✓ Roles ≥£90 k salary (Platform, Principal, DevOps)</td></tr>
+    </table>
+  </div>
+
+  <script>
+    document.getElementById('passwordForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      document.getElementById('denied').style.display = 'block';
+    });
+  </script>
+</body>
+</html>
